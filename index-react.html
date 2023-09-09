@@ -14,16 +14,34 @@
     <script type="text/jsx">
       const app = document.getElementById('app');
 
-      {/* React components are functions that return UI elements. Function names are capitalized */}
-      function Header() {
-        return <h1>Develop. Preview. Ship. 🚀</h1>;
+      {/* React components are functions that return UI elements. Function names are capitalized. 
+        Functions accept props as the first function parameter */}
+      function Header({title}) {
+        {/* Curly braces is JSX syntax to allow using JavaScript directly. For example:
+          object property with dot notation // {props.title}
+          template literal // {`Cool ${title}`} 
+          return value of a function // {createTitle(title)}
+          ternary operators // title ? title : 'Default title' */}
+        return <h1>{title ? title : 'Default title'}</h1>;
       }
       
       function HomePage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
         return (
           <div>
-            {/* Nesting the Header component */}
+            {/* Nesting the Header component with a custom title prop */}
             <Header />
+            <Header title="React 💙"/>
+            <Header title="A new title"/>
+            <ul>
+              {/* Iterating through lists. If we don't set a unique key prop, 
+                React will give us warning because it needs a way to uniquely identify items in an array
+                to know which elements to update in the DOM  */}
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
           </div>
         );
       }
