@@ -13,7 +13,23 @@
     <!-- Changing script type to JSX so Babel knows what to transform -->
     <script type="text/jsx">
       const app = document.getElementById('app');
-      ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app);
+
+      {/* React components are functions that return UI elements. Function names are capitalized */}
+      function Header() {
+        return <h1>Develop. Preview. Ship. 🚀</h1>;
+      }
+      
+      function HomePage() {
+        return (
+          <div>
+            {/* Nesting the Header component */}
+            <Header />
+          </div>
+        );
+      }
+
+      {/*  Use React components the same way you use regular HTML tags */}
+      ReactDOM.render(<HomePage />, app);
     </script>
   </body>
 </html>
