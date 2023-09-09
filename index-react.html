@@ -1,0 +1,19 @@
+<!-- index.html -->
+<html>
+  <body>
+    <div id="app"></div>
+
+    <!-- React is the core library. React-DOM provides DOM-specific methods to use React with the DOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel, a JavaScript compiler, transforms JSX code into JavaScript -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Changing script type to JSX so Babel knows what to transform -->
+    <script type="text/jsx">
+      const app = document.getElementById('app');
+      ReactDOM.render(<h1>Develop. Preview. Ship. 🚀</h1>, app);
+    </script>
+  </body>
+</html>
